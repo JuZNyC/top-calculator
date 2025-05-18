@@ -108,7 +108,7 @@ bckBut.addEventListener("click", () => {
 });
 
 eqBut.addEventListener("click", () => {
-    if (display.textContent.length > 0) {
+    if (display.textContent.length > 0 && firNum) {
         secNum = display.textContent
         display.textContent = String(operate()).slice(0,11);
     };
