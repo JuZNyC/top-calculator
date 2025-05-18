@@ -3,6 +3,16 @@ let secNum;
 let oper;
 let result;
 
+const container = document.querySelector("#container");
+const display = container.querySelector("#display");
+const numBut = container.querySelectorAll(".num-button");
+const opBut = container.querySelectorAll(".op-button");
+const perBut = container.querySelector("#period-button");
+const acBut = container.querySelector("#ac-button");
+const bckBut = container.querySelector("#back-button");
+const eqBut = container.querySelector("#equal-button");
+const pnBut = container.querySelector("#pos-neg-button");
+
 function add (a, b) {
     return a + b;
 };
@@ -16,7 +26,10 @@ function multiply (a, b) {
 };
 
 function divide (a, b) {
-    return a / b;
+    if (b == 0) {
+        return "Error";
+    }
+    return a/b;
 };
 
 function mod (a, b) {
@@ -45,17 +58,6 @@ function operate () {
     firNum = result;
     return result;
 };
-
-const container = document.querySelector("#container");
-const display = container.querySelector("#display");
-
-const numBut = container.querySelectorAll(".num-button");
-const opBut = container.querySelectorAll(".op-button");
-const perBut = container.querySelector("#period-button");
-const acBut = container.querySelector("#ac-button");
-const bckBut = container.querySelector("#back-button");
-const eqBut = container.querySelector("#equal-button");
-const pnBut = container.querySelector("#pos-neg-button");
 
 numBut.forEach(button => {
     button.addEventListener("click", () => {
